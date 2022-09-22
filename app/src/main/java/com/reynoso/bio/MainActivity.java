@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     mainBinding.tvHobbies.append(", "+mainBinding.etvHobbies.getText().toString().trim());
                 }
+                mainBinding.invalidateAll();
                 mainBinding.etvHobbies.setText("");
                 //hide keyboard
                 InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
