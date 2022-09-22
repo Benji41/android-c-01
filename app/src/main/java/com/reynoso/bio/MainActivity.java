@@ -1,6 +1,7 @@
 package com.reynoso.bio;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,36 +11,31 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.reynoso.bio.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
-    private EditText et_hobbies;
-    private Button btn_getHobby;
-    private TextView tv_showHobbies;
+    private ActivityMainBinding mainBinding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        et_hobbies = findViewById(R.id.etv_hobbies);
-        btn_getHobby = findViewById(R.id.btn_enterHobbie);
-        tv_showHobbies = findViewById(R.id.tv_hobbies);
-        tv_showHobbies.setText("Hobbies: ");
-        btn_getHobby.setOnClickListener(new View.OnClickListener() {
+        mainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+        mainBinding.tvHobbies.setText("Hobbies: ");
+        mainBinding.btnEnterHobbie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (tv_showHobbies.getText().toString().equals("Hobbies: ")){
-                    tv_showHobbies.append(et_hobbies.getText().toString().trim());
+                if (mainBinding.tvHobbies.getText().toString().equals("Hobbies: ")){
+                    mainBinding.tvHobbies.append(mainBinding.etvHobbies.getText().toString().trim());
+                    mainBinding.tvHobbies.setVisibility(View.VISIBLE);
                 }else {
-                    tv_showHobbies.append(", "+et_hobbies.getText().toString().trim());
+                    mainBinding.tvHobbies.append(", "+mainBinding.etvHobbies.getText().toString().trim());
                 }
-                tv_showHobbies.setVisibility(View.VISIBLE);
-                et_hobbies.setText("");
+                mainBinding.etvHobbies.setText("");
                 //hide keyboard
                 InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
             }
         });
-
-
-
     }
 }
