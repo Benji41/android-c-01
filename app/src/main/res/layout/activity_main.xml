@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#00BCD4"
+        android:backgroundTintMode="multiply"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:srcCompat="@tools:sample/avatars[5]"
+        app:tint="#FF9800" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/style_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/etv_hobbies"
+        style="@style/style_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hobby_hint_text"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btn_enterHobbie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/done" />
+
+    <TextView
+        android:id="@+id/tv_hobbies"
+        style="@style/style_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="text" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/scrollView_padding">
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/style_text_font_included"
+            android:text="@string/dummy_multiline_text"
+            tools:text="@tools:sample/lorem/random" />
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

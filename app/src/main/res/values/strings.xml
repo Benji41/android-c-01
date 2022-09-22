@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">bio</string>
+    <string name="name">Noe Benjamin Reynoso Aguirre</string>
+    <string name="dummy_multiline_text">With broccolis drink whipped cream.\n\nSpace suits are the astronauts of the devastated moon.The green people is finally remarkable.The mainland endures with courage, vandalize the bikini atoll.\nBrabeutas sunt torquiss de altus nuptia.\n\n\n\n\n\n\n\n\n\nRemember: shreded spinach tastes best when flattened in a saucepan enameled with curry.</string>
+    <string name="hobby_hint_text">Enter your hobbies!</string>
+    <string name="done">Done</string>
+</resources>

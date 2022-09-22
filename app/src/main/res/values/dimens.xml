@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_padding">10dp</dimen>
+    <dimen name="scrollView_padding">20dp</dimen>
+    <item name="text_spacing" type="dimen" format="float">2</item>
+</resources>
