@@ -11,25 +11,29 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.reynoso.bio.data.Bio;
 import com.reynoso.bio.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding mainBinding;
-
+    private Bio myBio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        myBio = new Bio("Noe Benjamin Reynoso Aguirre","Hobbies: ");
+        //WHERE VIEW-BINDING HAPPENS
         mainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        mainBinding.tvHobbies.setText("Hobbies: ");
+        //WHERE DATA-BINDING HAPPENS
+        mainBinding.setBio(myBio);
         mainBinding.btnEnterHobbie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mainBinding.tvHobbies.getText().toString().equals("Hobbies: ")){
-                    mainBinding.tvHobbies.append(mainBinding.etvHobbies.getText().toString().trim());
+                if (mainBinding.getBio().getHobbies().equals("Hobbies: ")){
+                    mainBinding.getBio().setHobbies(mainBinding.getBio().getHobbies()+mainBinding.etvHobbies.getText().toString().trim());
                     mainBinding.tvHobbies.setVisibility(View.VISIBLE);
                 }else {
-                    mainBinding.tvHobbies.append(", "+mainBinding.etvHobbies.getText().toString().trim());
+                    mainBinding.getBio().setHobbies(mainBinding.getBio().getHobbies()+", "+mainBinding.etvHobbies.getText().toString().trim());
                 }
                 mainBinding.invalidateAll();
                 mainBinding.etvHobbies.setText("");
